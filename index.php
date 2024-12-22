@@ -12,7 +12,7 @@
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                 <li data-target="#myCarousel" data-slide-to="1"></li>
                 <li data-target="#myCarousel" data-slide-to="2"></li>
-                <!-- <li data-target="#myCarousel" data-slide-to="3"></li> -->
+                <li data-target="#myCarousel" data-slide-to="3"></li>
             </ol>
 
             <!-- Wrapper for slides -->
@@ -31,7 +31,7 @@
                 }
                 ?>
                 <?php
-                 $get_slider="SELECT *FROM slider LIMIT 1,2";
+                 $get_slider="SELECT *FROM slider LIMIT 1,4";
                  $run_slider=mysqli_query($con,$get_slider);
                  while($row=mysqli_fetch_array($run_slider)){
                    $slider_name=$row['slider_name'];

@@ -104,6 +104,7 @@ if ($run_order) {
           if(isset($_GET['Edit_Product'])){
             include("edit_product.php");
           }
+          // Product Categories Dropdown 
           if(isset($_GET['Insert_Product_Categories'])){
             include("insert_product_categories.php");
           }
@@ -116,6 +117,31 @@ if ($run_order) {
           if(isset($_GET['Edit_Product_Categories'])){
             include("edit_product_categories.php");
           }
+          // Categories Drop Down
+          if(isset($_GET['Insert_Categories'])){
+            include("insert_categories.php");
+          }
+          if(isset($_GET['View_Categories'])){
+            include("view_categories.php");
+          }
+          if(isset($_GET['Edit_Categories'])){
+            include("edit_categories.php");
+          }
+          if(isset($_GET['Delete_Categories'])){
+            include("delete_categories.php");
+          }
+          // Slider DropDown
+          if(isset($_GET['Insert_Slider'])){
+            include("insert_slider.php");
+          }
+          if(isset($_GET['View_Slider'])){
+            include("view_slider.php");
+          }
+          if(isset($_GET['Delete_Slider'])){
+            include("delete_slider.php");
+          }
+          
+
           
           ?>
        </div>
