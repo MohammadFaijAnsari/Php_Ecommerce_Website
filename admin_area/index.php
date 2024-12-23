@@ -140,6 +140,16 @@ if ($run_order) {
           if(isset($_GET['Delete_Slider'])){
             include("delete_slider.php");
           }
+          if(isset($_GET['Edit_Slider'])){
+            include("edit_slider.php");
+          }
+          // View Customer
+          if(isset($_GET['View_Customer'])){
+            include("view_customer.php");
+          }
+          if(isset($_GET['Deleted_Customer'])){
+            include("delete_customer.php");
+          }
           
 
           
