@@ -153,6 +153,21 @@ if ($run_order) {
           if(isset($_GET['Vleted_Customer'])){
             include("delete_customer.php");
           }
+          // View Order 
+          if(isset($_GET['View_Order'])){
+            include("view_order.php");
+          }
+          if(isset($_GET['Deleted_Order'])){
+            include("delete_order.php");
+          }
+          // View Payment
+          if(isset($_GET['View_Payment'])){
+            include("view_payment.php");
+          }
+          if(isset($_GET['Delete_Payment'])){
+            include("delete_payment.php");
+          }
+          
           
 
           
