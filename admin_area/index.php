@@ -150,6 +150,9 @@ if ($run_order) {
           if(isset($_GET['Deleted_Customer'])){
             include("delete_customer.php");
           }
+          if(isset($_GET['Vleted_Customer'])){
+            include("delete_customer.php");
+          }
           
 
           
