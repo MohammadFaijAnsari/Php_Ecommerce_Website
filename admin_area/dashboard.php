@@ -243,20 +243,16 @@ include("include/db.php");
                 <div class="thumb-info mb-md">
                     <img src="admin_image/<?php echo $admin_image?>" alt="Image Not Found" class="rounded img-responsive" srcset="">
                       <div class="thumb-info-title">
-                         <span class="thumb-info-inner">Admin Name:<?php echo $admin_name;?></span><br>
-                         <span class="thumb-info-type">Admin Jobs:<?php echo $admin_job;?></span>
+                         <strong class="thumb-info-inner">Admin Name:<?php echo $admin_name;?></strong><br>
+                         
                   </div>
                 </div>
 
                 <div class="mb-md">
                    <div class="weight-content-expends">
-                      <i class="fa fa-user"></i><span> Emails: </span><?php echo $admin_email;?>  <br>
-                      <i class="fa fa-user"></i><span> Country: </span><?php echo $admin_country;?> <br>
-                      <i class="fa fa-user"></i><span> Contact: </span><?php echo $admin_contact;?>
+                      <i class="fa fa-user"></i><strong>Admin Email: </strong><?php echo $admin_email;?>  <br>
+                      
                    </div>
-                   <hr class="dotted short">
-                   <h5>About</h5><?php echo $admin_about;?>
-                   
                 </div>
               </div>
             </div>

@@ -176,17 +176,17 @@ include("include/db.php");
          <!-- User DropDown Start -->
         <li>
             <a href="#" data-toggle="collapse" data-target="#user">
-              <i class="fa fa-fw fa-table"></i>User Profile<i class='fa fa-fw fa-caret-down'></i>
+              <i class="fa fa-fw fa-table"></i>Admin Profile<i class='fa fa-fw fa-caret-down'></i>
             </a>
            <ul  id="user" class="collapse">
               <li>
-                <a href="index.php?Insert User">Insert Profile</a>
+                <a href="index.php?Insert Admin">Insert Profile</a>
               </li>
               <li>
-                <a href="index.php?View User">View Profile</a>
+                <a href="index.php?View Admin">View Profile</a>
               </li>
               <li>
-                <a href="index.php?Edit Profile id=<?php echo $admin_id;?>">Edit Profile</a>
+                <a href="index.php?Edit Admin=<?php echo $admin_id;?>">Edit Profile</a>
               </li>
            </ul>
           </li>

@@ -2,13 +2,12 @@
  session_start();
  include("include/db.php");
  if(!isset($_SESSION['admin_email'])){
-  //  echo "<script>window.open('login.php','_self')</script>";
    echo "<script>window.open('login.php','_self')</script>";
-
  }else{
 ?>
 <?php
 // Select Admin 
+error_reporting(false);
  $admin_email=$_SESSION['admin_email'];
  $select_admin="SELECT * FROM admin_login WHERE admin_email='$admin_email' ";
  $run_admin=mysqli_query($con,$select_admin);
@@ -18,11 +17,7 @@
    $admin_name=$row_admin['admin_name'];
    $admin_email=$row_admin['admin_email'];
    $admin_image=$row_admin['admin_image'];
-   $admin_country=$row_admin['admin_country'];
-   $admin_contact=$row_admin['admin_contact'];
-   $admin_job=$row_admin['admin_job'];
-   $admin_about=$row_admin['admin_about'];
-   
+
  }
 
 // Select Product
@@ -167,6 +162,25 @@ if ($run_order) {
           if(isset($_GET['Delete_Payment'])){
             include("delete_payment.php");
           }
+          // user
+          
+          if(isset($_GET['Insert_Admin'])){
+            include("insert_admin.php");
+          }
+          if(isset($_GET['View_Admin'])){
+            include("view_admin.php");
+          }
+          if(isset($_GET['Admin_Delete'])){
+            include("admin_delete.php");
+          }
+          if(isset($_GET['Edit_Admin'])){
+            include("edit_admin.php");
+          }
+          
+          
+
+          
+          
           
           
 
