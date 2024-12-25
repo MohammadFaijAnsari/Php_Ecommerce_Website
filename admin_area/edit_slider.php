@@ -45,6 +45,13 @@
                     </div>
                     <br><br>
                     <div class="form-group">
+                        <label for="" class="col-md-3 control-label">Slider Url</label>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" name="slider_url" id="slider_url">
+                    </div>
+                    <br><br>
+                    <div class="form-group">
                         <label for="" class="col-md-3 control-label">Slider Image</label>
                     </div>
                     <div class="col-md-6">
@@ -68,6 +75,7 @@
                 <?php
                 if (isset($_POST['submit'])) {
                     $s_name = $_POST['slider_name'];
+                    $s_url=$_POST['slider_url'];
                     if ($_FILES['slider_image']['name']) {
                         $product_img1 = $_FILES['slider_image']['name'];
                         $tmp_image = $_FILES['slider_image']['tmp_name'];
@@ -76,7 +84,7 @@
                         $product_img1 = $img;
                     }
 
-                    $update_slider = "UPDATE slider SET slider_name='$s_name', slider_image='$product_img1' WHERE id='$slider_id'";
+                    $update_slider = "UPDATE slider SET slider_name='$s_name',slider_url='$s_url', slider_image='$product_img1' WHERE id='$slider_id'";
                     $run_slider = mysqli_query($con, $update_slider);
 
                     if ($run_slider) {

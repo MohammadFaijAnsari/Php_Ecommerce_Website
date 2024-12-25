@@ -23,9 +23,10 @@
                 while ($row = mysqli_fetch_array($run_slider)) {
                     $slider_name = $row['slider_name'];
                     $slider_image = $row['slider_image'];
+                    $slider_url=$row['slider_url'];
                     echo "
                         <div class='item active'>
-                        <img src='admin_area/slider_images/$slider_image' id='images' />
+                        <a href='$slider_url'><img src='admin_area/slider_images/$slider_image' id='images'/></a>
                         </div>
                     ";
                 }
@@ -38,7 +39,7 @@
                    $slider_image=$row['slider_image'];
                    echo "
                      <div class='item'>
-                       <img src='admin_area/slider_images/$slider_image' id='images'/>
+                       <a href='$slider_url'><img src='admin_area/slider_images/$slider_image' id='images'/></a>
                      </div>
                    ";
                  }

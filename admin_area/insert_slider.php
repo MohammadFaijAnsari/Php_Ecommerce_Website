@@ -36,6 +36,13 @@
                 <input type="text" name="slider_name" id="slider_name">
              </div>
               <br><br>
+              <div class="form-group">
+                  <label for="" class="col-md-3 control-label">Slider Url</label>
+             </div>
+             <div class="col-md-6">
+                <input type="text" name="slider_url" id="slider_url">
+             </div>
+             <br><br>
              <div class="form-group">
                   <label for="" class="col-md-3 control-label">Slider Image</label>
               </div>
@@ -57,8 +64,10 @@
           <?php
            if(isset($_POST['submit'])){
             $slider_name=$_POST['slider_name'];
+            $slider_url=$_POST['slider_url'];
             $slider_image=$_FILES['slider_image']['name']; 
-            $slider_temp=$_FILES['slider_image']['tmp_name'];            
+            $slider_temp=$_FILES['slider_image']['tmp_name']; 
+                     
      
             $view_slider="SELECT * FROM slider";
             $run_slider=mysqli_query($con,$view_slider);
@@ -67,7 +76,7 @@
             if($count_slider<4){
                 move_uploaded_file($slider_temp,"slider_images/$slider_image");
 
-                $insert_slider="INSERT INTO slider(slider_name,slider_image) VALUES('$slider_name','$slider_image') ";
+                $insert_slider="INSERT INTO slider(slider_name,slider_url,slider_image) VALUES('$slider_name','$slider_url','$slider_image') ";
                 $run_slider=mysqli_query($con,$insert_slider);
                 if($run_slider){
                     echo "<script>alert('Slider Added Sucessfully')</script>";
