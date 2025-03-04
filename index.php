@@ -115,7 +115,11 @@
         <div class="row">
             <!-- 1 Product Start -->
              <?php
-               getPro();
+                if(!isset($_GET['search'])){
+                 getPro();
+                }else{
+                 search();
+               }
              ?>
             <!-- 1 Product End -->
 

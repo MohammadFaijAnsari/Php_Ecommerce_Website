@@ -133,6 +133,7 @@ session_start();
                             </span>
                         </div>
                     </form>
+                    <!-- Form End -->
             </div>
         </div>
     </div>

@@ -90,6 +90,43 @@ function addcart(){
  }
 // Items Counts End
 
+// Serach Start
+function search(){
+ if(isset($_GET['search'])){
+   global $db;
+    $search="SELECT * FROM product WHERE product_title LIKE '$_GET[search]%' OR product_price LIKE '$_GET[search]%' ";
+    $run_product=mysqli_query($db,$search);
+    while ($row_product = mysqli_fetch_array($run_product)){
+      $product_id = $row_product['product_id'];
+      $product_title = $row_product['product_title'];
+      $product_price = $row_product['product_price'];
+      $product_img1 = $row_product['product_img1'];
+    if($run_product>0){
+        echo "
+        <div class='col-md-3 col-sm-6 center-responsive'>
+          <div class='product'>
+            <a href='details.php?product_id=$product_id'>
+              <img src='admin_area/product_images/$product_img1' class='img-responsive' id='image' name='image'/>
+            </a> 
+            <div class='text'>
+             <h3><a href='details.php?product_id=$product_id' id='hide'>$product_title</a></h3>
+             <p class='price'>₹ $product_price</p>
+             <p class='buttons'>
+             &nbsp;&nbsp;
+              <a href='details.php?pro_id=$product_id' class='btn btn-default'>View Details</a>&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href='details.php?pro_id=$product_id' class='btn btn-primary'><i class='fa fa-shopping-cart'></i>Add to Cart</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        ";
+    }
+  }
+ }
+}
+
+// Search End
+
 //  Index Page Product Display
 function getPro()
 {
@@ -123,6 +160,7 @@ function getPro()
         </div>
         ";
   }
+
 }
 // Product Categories Display Function 
 function getPcat()
