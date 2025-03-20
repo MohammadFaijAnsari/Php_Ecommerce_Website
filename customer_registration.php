@@ -39,7 +39,7 @@
           <div class="col-md-6">
             <ul class="menu">
                 <li>
-                    <a href="customer_registation.php" id="link">Registator</a>
+                    <a href="#" id="link">Registator</a>
                 </li>
                 <li>
                     <a href="customer/my_account.php" id="link">MyAccount</a>
