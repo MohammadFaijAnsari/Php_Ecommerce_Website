@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 10, 2025 at 07:55 AM
+-- Generation Time: Mar 20, 2025 at 05:53 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -114,13 +114,25 @@ CREATE TABLE `payment` (
 --
 
 CREATE TABLE `product` (
-  `product_id` int(11) NOT NULL,
+  `product_id` int(20) NOT NULL,
+  `p_cat_Id` int(20) NOT NULL,
+  `cat_id` int(20) NOT NULL,
+  `date` date NOT NULL,
   `product_title` varchar(255) NOT NULL,
-  `product_price` int(25) NOT NULL,
   `product_img1` varchar(255) NOT NULL,
   `product_img2` varchar(255) NOT NULL,
-  `product_img3` varchar(255) NOT NULL
+  `product_img3` varchar(255) NOT NULL,
+  `product_price` int(20) NOT NULL,
+  `product_desc` varchar(255) NOT NULL,
+  `product_keyword` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `product`
+--
+
+INSERT INTO `product` (`product_id`, `p_cat_Id`, `cat_id`, `date`, `product_title`, `product_img1`, `product_img2`, `product_img3`, `product_price`, `product_desc`, `product_keyword`) VALUES
+(1, 1, 1, '2025-03-20', 'Baby Cloth', 'kids1.jpeg', 'kids2.jpeg', 'kids3.jpeg', 1299, 'Best Product', 'Best Product');
 
 -- --------------------------------------------------------
 
@@ -154,13 +166,6 @@ CREATE TABLE `registration` (
   `c_pass` varchar(255) NOT NULL,
   `c_image` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `registration`
---
-
-INSERT INTO `registration` (`c_id`, `c_name`, `c_email`, `c_pass`, `c_image`) VALUES
-(2, 'Faij Ansari', 'faij@gmail.com', '1234', '2.jpg');
 
 -- --------------------------------------------------------
 
@@ -257,7 +262,7 @@ ALTER TABLE `admin_login`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `p_id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `p_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -281,7 +286,7 @@ ALTER TABLE `payment`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `product_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `product_categories`
