@@ -141,7 +141,7 @@ function getPro()
 
     echo "
         <div class='col-md-3 col-sm-6 center-responsive'>
-          <div class='product'>
+          <div class='product '>
             <a href='details.php?pro_id=$product_id'>
               <img src='admin_area/product_images/$product_img1' class='img-responsive' id='image' name='image'/>
             </a>

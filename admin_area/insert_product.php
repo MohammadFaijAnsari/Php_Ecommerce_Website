@@ -112,7 +112,7 @@ include("include/db.php");
             <div class="form-group">
               <label class="col-md-3 control-label">Product Price</label>
               <input type="text" name="product_price" id="product_price" placeholder='Enter Price' class="form-control" required>
-            </div>
+            </div>  
             <div class="form-group">
               <label class="col-md-3 control-label">Product Keyword</label>
               <input type="text" name="product_keyword" id="product_keyword" placeholder='Enter Keyword' class="form-control" required>
@@ -121,6 +121,7 @@ include("include/db.php");
               <label class="col-md-3 control-label">Product Description</label>
               <textarea name="product_desc" id="product_area" placeholder='Enter Product Description' class="form-control" rows="6" spellcheck="true"></textarea>
             </div>
+            
             <div class="form-group">
               <input type="submit" name='submit' id='submit' value="Insert Product" class="form-control btn btn-primary">
             </div>
@@ -139,7 +140,6 @@ include("include/db.php");
 
 </html>
 <?php
-error_reporting(false);
 if (isset($_POST['submit'])) {
   $product_title = $_POST['product_title'];
   $product_cat_id = $_POST['product_cat'];

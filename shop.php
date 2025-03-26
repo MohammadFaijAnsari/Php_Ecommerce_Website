@@ -70,7 +70,7 @@
                                     <a href='details.php?pro_id=$pro_id'>
                                       <img src='admin_area/product_images_downloads/$pro_img1' class='img-responsive' id='images' name='images'/>
                                     </a>
-                                </div>
+                                
                                 <div class='text'>
                                     <h3><a href='details.php?pro_id=$pro_id' id='hide'>$pro_title</a></h3>
                                     <p class='price' id='price'>₹ $pro_price</p>
@@ -78,6 +78,7 @@
                                       <a href='details.php?pro_id=$pro_id' class='btn btn-default'>View Details</a>
                                       <a href='details.php?pro_id=$pro_id' class='btn btn-primary'><i class='fa fa-shopping-cart'></i>  Add to Cart</a>
                                     </p>
+                                </div>
                                 </div>
                             </div>
                             ";

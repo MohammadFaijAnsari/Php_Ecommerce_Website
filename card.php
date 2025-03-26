@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
      <!-- jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <!-- Font AwosomeBootstrap  -->
+    <!-- Font Awesome Bootstrap  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
@@ -205,7 +205,8 @@
                                 $total+=$sub_total;
                               }
                             
-                           ?>
+
+                    ?>
                            <tr>
                              <td><img src="admin_area/product_images/<?php echo $product_img1; ?>" alt="Image Not Found" srcset=""></td>
                              <td><?php echo $product_title;?></td>
@@ -281,7 +282,9 @@
                      $product_title=$row['product_title'];
                      $product_price=$row['product_price'];
                      
+
                     ?>
+                    
                    <div class="center-responsive col-md-3">
                        <div class="">
                          <a href="">
@@ -296,66 +299,59 @@
                    <?php
                      }
                    ?>
-
-                   <!-- <div class="center-responsive col-md-3">
-                       <div class="product same-height">
-                         <a href="">
-                            <img src="admin_area/product_images/phone1.jpeg" class='img-responsive' alt="" srcset="">
-                         </a>
-                         <div class="text">
-                             <h3><a href="details.php" id='hide'>Laptop Mackbook</a></h3>
-                             <p class="price">₹ 1,90,000</p>
-                         </div>
-                       </div>
-                   </div> -->
-
-                   
                    <!-- center-responsive col-md-3 end -->
                 </div>
                <!-- Box End -->
 
               </div>
               <!-- Order Summary Start -->
-
                <!-- col-md-3 start -->
-                  <div class="col-md-3">
-                     <div class="box" id='ordersummary'>
-                       <div class="box-header">
-                         <h3>Order Summary</h3>
-                       </div>
-                       <p class="text-muted">
-                         Shopping and additiona are calcultaed based on the values you have entered
-                       </p>   
-                     
-                     <table class="table">
-                       <tbody>
-                         <tr>
-                           <td>Order Subtotal</td>
-                           <th>₹ <?php echo $total;?></th>
-                         </tr>
-                         <?php
+                <div class="col-md-3">
+                   <div class="box" id='ordersummary'>
+                      <div class="box-header">
+                        <h3>Order Summary</h3>
+                      </div>
+                      <p class="text-muted">
+                         Shopping and additional charges are calculated based on the values you have entered.
+                      </p>
+                   <table class="table">
+                    <tbody>
+                      <tr>
+                        <td>Order Subtotal</td>
+                        <th>₹ <?php echo $total;?></th>
+                      </tr>
+                      <tr>
+                        <td>Shipping and Delivery Charge</td>
+                        <?php
                           $charge=99;
-                         ?>
-                         <tr>
-                           <td>Shipping and Delivery Charge</td>
-                            <td>₹ <?php echo $charge; ?></td>
-                         </tr>
+                        ?>
+                        <td>₹ <?php echo $charge; ?></td>
+                      </tr>
 
-                         <tr>
-                           <td>Tax</td>
-                           <td>₹ 0</td>
-                         </tr>
-                         <?php
-                          $total_c=$total+$charge;
-                         ?>
-                          <tr class="total">
-                             <td>Total</td>
-                             <th>₹ <?php echo $total_c;?></th>
-                          </tr>
-                       </tbody>
-                     </table>
-                   </div>
-                  </div>
+                <!-- Display discount if applicable -->
+                <?php
+                $total_after_discount = $total + $charge;
+                if ($total_after_discount > 1000) {
+                    $discount = $total_after_discount * 0.05;
+                } else {
+                    $discount = 0;
+                }
+                ?>
+                <tr>
+                    <td>Discount (5%)</td>
+                    <td>- ₹ <?php echo $discount;?></td>
+                </tr>
+
+                <tr class="total">
+                    <td>Total</td>
+                    <th>₹ <?php echo $total_after_discount - $discount;?></th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- Order Summary End -->
+
                <!-- col-md-3 end -->
 
                <!-- Order Summary End -->
@@ -373,4 +369,3 @@
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </body>
 </html>
-
