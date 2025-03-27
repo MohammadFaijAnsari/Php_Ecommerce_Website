@@ -19,6 +19,7 @@ if (isset($_GET['pro_id'])) {
     $p_img2 = $row_product['product_img2'];
     $p_img3 = $row_product['product_img3'];
     $p_price = $row_product['product_price'];
+    $p_actual_price=$row_product['actual_price'];
     $p_desc = $row_product['product_desc'];
     $p_cat_id = $row_product['cat_id'];
 
@@ -204,7 +205,7 @@ if (isset($_GET['pro_id'])) {
                                         </select>
                                     </div>
                                 </div>
-                                <p class="price">₹ <?php echo $p_price;  ?></p>
+                                <p class="price">₹ <?php echo $p_price;  ?>&nbsp;&nbsp;&nbsp;₹ <strike><?php echo $p_actual_price?></strike></p>
                                 <p class="text-center button">
                                     <button class="btn btn-primary" type="submit">
                                         <i class="fa fa-shopping-cart"></i> Add to Cart

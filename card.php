@@ -281,7 +281,7 @@
                      $product_img1=$row['product_img1'];
                      $product_title=$row['product_title'];
                      $product_price=$row['product_price'];
-                     
+                     $actual_price=$row['actual_price'];
 
                     ?>
                     
@@ -292,7 +292,7 @@
                          </a>
                          <div class="text">
                              <h3><a href="details.php" id='hide'><?php echo $product_title;?></a></h3>
-                             <p class="price">₹ <?php echo $product_price;?></p>
+                             <p class="price">₹ <?php echo $product_price;?>&nbsp;&nbsp;&nbsp;₹ <strike><?php echo $actual_price;?></strike></p>
                          </div>
                        </div>
                    </div>
