@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 20, 2025 at 05:53 PM
+-- Generation Time: Mar 27, 2025 at 09:38 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -55,6 +55,14 @@ CREATE TABLE `cart` (
   `size` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`p_id`, `ip_add`, `qty`, `size`) VALUES
+(1, 0, 3, 0),
+(2, 0, 1, 0);
+
 -- --------------------------------------------------------
 
 --
@@ -72,7 +80,8 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`cat_id`, `cat_title`, `cat_desc`) VALUES
-(1, 'Men', 'Best');
+(1, 'Men', 'Best'),
+(2, 'Women', 'Best');
 
 -- --------------------------------------------------------
 
@@ -124,15 +133,19 @@ CREATE TABLE `product` (
   `product_img3` varchar(255) NOT NULL,
   `product_price` int(20) NOT NULL,
   `product_desc` varchar(255) NOT NULL,
-  `product_keyword` varchar(255) NOT NULL
+  `product_keyword` varchar(255) NOT NULL,
+  `actual_price` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`product_id`, `p_cat_Id`, `cat_id`, `date`, `product_title`, `product_img1`, `product_img2`, `product_img3`, `product_price`, `product_desc`, `product_keyword`) VALUES
-(1, 1, 1, '2025-03-20', 'Baby Cloth', 'kids1.jpeg', 'kids2.jpeg', 'kids3.jpeg', 1299, 'Best Product', 'Best Product');
+INSERT INTO `product` (`product_id`, `p_cat_Id`, `cat_id`, `date`, `product_title`, `product_img1`, `product_img2`, `product_img3`, `product_price`, `product_desc`, `product_keyword`, `actual_price`) VALUES
+(1, 1, 1, '2025-03-20', 'Baby Cloth', 'kids1.jpeg', 'kids2.jpeg', 'kids3.jpeg', 1299, 'Best Product', 'Best Product', 2000),
+(2, 2, 1, '2025-03-21', 'Watch', 'watch1.jpeg', 'watch2.jpeg', 'watch3.jpeg', 1499, 'Best Product', 'Best Product', 1599),
+(10, 2, 1, '2025-03-26', 'MackBook', 'laptop1.jpeg', 'laptop2.jpeg', 'laptop3.jpeg', 49999, 'Best Product', 'Best Product', 50999),
+(11, 1, 2, '2025-03-27', 'Kurti', 'kurti1.jpeg', 'kurti2.jpeg', 'kurti3.jpeg', 1499, 'Best Product', 'Best Product', 2099);
 
 -- --------------------------------------------------------
 
@@ -151,7 +164,8 @@ CREATE TABLE `product_categories` (
 --
 
 INSERT INTO `product_categories` (`p_cat_Id`, `p_cat_title`, `p_cat_desc`) VALUES
-(1, 'Cloths', 'Best');
+(1, 'Cloths', 'Best'),
+(2, 'Accessories', 'Best');
 
 -- --------------------------------------------------------
 
@@ -164,7 +178,8 @@ CREATE TABLE `registration` (
   `c_name` varchar(255) NOT NULL,
   `c_email` varchar(255) NOT NULL,
   `c_pass` varchar(255) NOT NULL,
-  `c_image` varchar(255) NOT NULL
+  `c_image` varchar(255) NOT NULL,
+  `c_ip` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -262,13 +277,13 @@ ALTER TABLE `admin_login`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `p_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `p_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `cat_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `cat_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `customers_order`
@@ -286,19 +301,19 @@ ALTER TABLE `payment`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `product_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `product_categories`
 --
 ALTER TABLE `product_categories`
-  MODIFY `p_cat_Id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `p_cat_Id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `registration`
 --
 ALTER TABLE `registration`
-  MODIFY `c_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `c_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `slider`

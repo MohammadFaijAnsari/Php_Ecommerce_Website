@@ -94,7 +94,8 @@ function addcart(){
 function search(){
  if(isset($_GET['search'])){
    global $db;
-    $search="SELECT * FROM product WHERE product_title LIKE '$_GET[search]%' OR product_price LIKE '$_GET[search]%' ";
+    $searchdata=$_GET['search'];
+    $search="SELECT * FROM product WHERE product_title LIKE '$searchdata' OR product_price LIKE '$searchdata' ";
     $run_product=mysqli_query($db,$search);
     while ($row_product = mysqli_fetch_array($run_product)){
       $product_id = $row_product['product_id'];
@@ -148,7 +149,7 @@ function getPro()
             
             <div class='text'>
              <h3><a href='details.php?product_id=$product_id' id='hide'>$product_title</a></h3>
-             <p class='price'>₹ $product_price &nbsp;&nbsp;&nbsp; ₹ <strike>  $actual_price</strike></p>
+             <p class='price'>₹ $product_price &nbsp;&nbsp; ₹ <strike>  $actual_price</strike></p>
              <p class='price'></p>
              <p class='buttons'>
              &nbsp;&nbsp

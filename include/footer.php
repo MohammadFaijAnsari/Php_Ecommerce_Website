@@ -7,6 +7,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link
+     rel="stylesheet"
+     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+     integrity="sha512-vZCgFjYvBdZcPyUJ+fOQW6xUEzMZrMSkZDxUqxBpscvqzgzW8R1k1I9U8M3aM1pTQoyVi7u6YB9+Azr6RXk0VQ=="
+     crossorigin="anonymous"
+     referrerpolicy="no-referrer"
+   />
     <style>
       
     </style>
@@ -89,14 +96,14 @@
                     </div>
                   </form>
                   <hr>
-                  <h4>Stay In Touch</h4>
+                  <!-- <h4>Stay In Touch</h4>
                   <p class="social">
                     <a href="#"><i class="fa fa-facebook"></i></a>
                     <a href="#"><i class="fa fa-instagram"></i></a>
                     <a href="#"><i class="fa fa-twitter"></i></a>
                     <a href="#"><i class="fa fa-google-plus"></i></a>
                     <a href="#"><i class="fa fa-envelope"></i></a>
-                  </p>
+                  </p> -->
                <!--4 col-md-3 end  -->
            </div>
         </div>

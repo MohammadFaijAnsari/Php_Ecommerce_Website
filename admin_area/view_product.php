@@ -43,7 +43,7 @@ include("include/db.php");
                                     <th>Product Title</th>
                                     <th>Product Image</th>
                                     <th>Product Price</th>
-                                    <!-- <th>Product Sold</th> -->
+                                    <th>Actual Price</th>
                                     <th>Product Keyword</th>
                                     <th>Product Date</th>
                                     <th>Product Edit</th>
@@ -59,6 +59,7 @@ include("include/db.php");
                                    $pro_title=$row_product['product_title'];
                                    $pro_img1=$row_product['product_img1'];
                                    $pro_price="₹ ".$row_product['product_price'];
+                                   $actual_price="₹ ".$row_product['actual_price'];
                                    $pro_keyword=$row_product['product_keyword'];
                                    $pro_date=$row_product['date'];
                                 
@@ -68,6 +69,7 @@ include("include/db.php");
                                     <td><?php echo $pro_title;?></td>
                                     <td><img src="product_images/<?php echo $pro_img1;?>" alt="Image Not Found" height="35px" width="80px" srcset=""></td>
                                     <td><?php echo $pro_price;?></td>
+                                    <td><?php echo $actual_price;?></td>
                                     <td><?php echo $pro_keyword;?></td>
                                     <td><?php echo $pro_date;?></td>
                                     <td>

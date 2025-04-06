@@ -117,9 +117,8 @@
              <?php
                 if(!isset($_GET['search'])){
                  getPro();
-                }else{
-                 search();
-               }
+                }
+                
              ?>
             <!-- 1 Product End -->
 
