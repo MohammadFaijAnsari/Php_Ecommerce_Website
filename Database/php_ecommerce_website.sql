@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 27, 2025 at 09:38 AM
+-- Generation Time: Apr 06, 2025 at 07:51 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -55,14 +55,6 @@ CREATE TABLE `cart` (
   `size` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `cart`
---
-
-INSERT INTO `cart` (`p_id`, `ip_add`, `qty`, `size`) VALUES
-(1, 0, 3, 0),
-(2, 0, 1, 0);
-
 -- --------------------------------------------------------
 
 --
@@ -100,6 +92,29 @@ CREATE TABLE `customers_order` (
   `due_amount` int(255) NOT NULL,
   `order_status` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mail`
+--
+
+CREATE TABLE `mail` (
+  `id` int(11) NOT NULL,
+  `name` varchar(20) DEFAULT NULL,
+  `email` varchar(20) DEFAULT NULL,
+  `subject` varchar(20) DEFAULT NULL,
+  `message` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `mail`
+--
+
+INSERT INTO `mail` (`id`, `name`, `email`, `subject`, `message`) VALUES
+(1, 'Mohammad Faij Ansari', 'faija639@gmail.com', 'Best', 'Problem the Product Purchasing time'),
+(2, 'Mohammad Faij', 'faija639@gmail.com', 'Not Best Product', 'Problem the product delivery time'),
+(3, 'Mohammad Faij Ansari', 'faija639@gmail.com', 'Best ', 'Best Not Product');
 
 -- --------------------------------------------------------
 
@@ -234,6 +249,12 @@ ALTER TABLE `customers_order`
   ADD PRIMARY KEY (`order_id`);
 
 --
+-- Indexes for table `mail`
+--
+ALTER TABLE `mail`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `payment`
 --
 ALTER TABLE `payment`
@@ -277,7 +298,7 @@ ALTER TABLE `admin_login`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `p_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `p_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -290,6 +311,12 @@ ALTER TABLE `categories`
 --
 ALTER TABLE `customers_order`
   MODIFY `order_id` int(20) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `mail`
+--
+ALTER TABLE `mail`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `payment`
