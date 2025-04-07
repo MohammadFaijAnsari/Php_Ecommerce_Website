@@ -24,6 +24,7 @@ include("include/db.php");
      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
 </head>
@@ -88,14 +89,14 @@ include("include/db.php");
         <!-- Dashboard Text Start-->
         <li>
           <a href="index.php?Dashboard">
-            <i class="fa fa-fw fa-dashboard" ></i>Dashboard
+            <i class="fa fa-fw fa-dashboard" ></i>&nbsp;Dashboard
           </a>
         </li>
         <!-- Dashboard Text End-->
         <!-- Product DropDown Start -->
           <li>
             <a href="#" data-toggle="collapse" data-target="#product">
-              <i class="fa fa-fw fa-table"></i>Product <i class='fa fa-fw fa-caret-down'></i>
+              <i class="fa fa-fw fa-table"></i>&nbsp;Product <i class='fa fa-fw fa-caret-down'></i>
             </a>
            <ul  id="product" class="collapse">
               <li>
@@ -110,7 +111,7 @@ include("include/db.php");
          <!-- Product Categories DropDown Start -->
          <li>
             <a href="#" data-toggle="collapse" data-target="#product_categories">
-              <i class="fa fa-fw fa-table"></i>Product Categories <i class='fa fa-fw fa-caret-down'></i>
+              <i class="fa fa-fw fa-table"></i>&nbsp;Product Categories <i class='fa fa-fw fa-caret-down'></i>
             </a>
            <ul  id="product_categories" class="collapse">
               <li>
@@ -125,7 +126,7 @@ include("include/db.php");
         <!--  Categories DropDown Start -->
         <li>
             <a href="#" data-toggle="collapse" data-target="#product_cat">
-              <i class="fa fa-fw fa-table"></i>Categories <i class='fa fa-fw fa-caret-down'></i>
+              <i class="fa fa-fw fa-table"></i>&nbsp;Categories <i class='fa fa-fw fa-caret-down'></i>
             </a>
            <ul  id="product_cat" class="collapse">
               <li>
@@ -140,7 +141,7 @@ include("include/db.php");
         <!-- Slider DropDown Start -->
         <li>
             <a href="#" data-toggle="collapse" data-target="#slider">
-              <i class="fa fa-fw fa-table"></i>Slider<i class='fa fa-fw fa-caret-down'></i>
+              <i class="fa fa-fw fa-table"></i>&nbsp;Slider<i class='fa fa-fw fa-caret-down'></i>
             </a>
            <ul  id="slider" class="collapse">
               <li>
@@ -155,28 +156,28 @@ include("include/db.php");
         <!-- View Customer Start -->
          <li>
            <a href="index.php?View Customer">
-             <i class="fa fa-fw fa-edit"></i>View Customer
+             <i class="fa fa-fw fa-edit"></i>&nbsp;View Customer
            </a>
          </li>
         <!-- View Customer End -->
         <!-- View Order Start -->
         <li>
            <a href="index.php?View Order">
-             <i class="fa fa-fw fa-list"></i>View Order
+             <i class="fa fa-fw fa-list"></i>&nbsp;View Order
            </a>
          </li>
         <!-- View Order End -->
          <!-- View Order Start -->
         <li>
            <a href="index.php?View Payment">
-             <i class="fa fa-fw fa-pencil"></i>View Payment
+             <i class="fa fa-fw fa-pencil"></i>&nbsp;View Payment
            </a>
          </li>
         <!-- View Order End -->
          <!-- User DropDown Start -->
         <li>
             <a href="#" data-toggle="collapse" data-target="#user">
-              <i class="fa fa-fw fa-table"></i>Admin Profile<i class='fa fa-fw fa-caret-down'></i>
+              <i class="fa fa-fw fa-table"></i>&nbsp;Admin Profile<i class='fa fa-fw fa-caret-down'></i>
             </a>
            <ul  id="user" class="collapse">
               <li>
@@ -190,6 +191,14 @@ include("include/db.php");
               </li>
            </ul>
           </li>
+          <!-- User DropDown End -->
+          <!-- Email Sidebar Start -->
+          <li>
+           <a href="index.php?Client_Problem">
+           <i class="fa-solid fa-circle-xmark"></i>&nbsp;Client Problem
+           </a>
+         </li>
+          <!-- Email Sidebar End-->
         <!-- Slider DropDown End -->
       </ul>
     </div> 

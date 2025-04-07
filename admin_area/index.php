@@ -176,13 +176,14 @@ if ($run_order) {
           if(isset($_GET['Edit_Admin'])){
             include("edit_admin.php");
           }
-          
-          
+          // Client Problem
 
-          
-          
-          
-          
+          if(isset($_GET['Client_Problem'])){
+            include('client_problem.php');
+          }
+          if(isset($_GET['Deleted_Client'])){
+            include('deleted_client.php');
+          }
 
           
           ?>
