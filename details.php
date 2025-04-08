@@ -1,6 +1,7 @@
 <?php
-include("include/db.php");
 error_reporting(false);
+session_start();
+include("include/db.php");
 include("functions/function.php");
 
 // Check if the product ID is set

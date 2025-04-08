@@ -45,7 +45,7 @@
                     <a href="customer/my_account.php" id="link">MyAccount</a>
                 </li>
                 <li>
-                    <a href="card.php" id="link">Go Card</a>
+                    <a href="card.php" id="link">Go Cart</a>
                 </li>
                 <li>
                     <!-- <a href="login.php" id="link">Login</a> -->

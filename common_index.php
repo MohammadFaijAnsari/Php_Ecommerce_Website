@@ -35,6 +35,7 @@ session_start();
             <div class="col-md-6 offer">
                 <a href="#" class="btn btn-success btn-sm">
                 <?php
+                
                  if(!isset($_SESSION['c_email'])){
                    echo "Welcome Guest";
                  }else{
