@@ -3,7 +3,6 @@ error_reporting(false);
 session_start();
 include("include/db.php");
 include("functions/function.php");
-
 // Check if the product ID is set
 if (isset($_GET['pro_id'])) {
     global $con;
@@ -29,7 +28,7 @@ if (isset($_GET['pro_id'])) {
     $run_p_cat = mysqli_query($con, $get_p_cat);
     $row_p_cat = mysqli_fetch_array($run_p_cat);
     $p_cat_title = $row_p_cat['p_cat_title'];
-}
+ }
 ?>
 <!DOCTYPE html>
 <html lang="en">

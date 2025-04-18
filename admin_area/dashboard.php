@@ -67,7 +67,7 @@ include("include/db.php");
             </div>
         </div>
         <!-- panel heading end -->
-        <a href="index.php?View_Product">
+        <a href="index.php?View_Customer">
             <div class="panel-footer">
                 <span class="pull-left">View Details</span>
                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -98,7 +98,7 @@ include("include/db.php");
             </div>
         </div>
         <!-- panel heading end -->
-        <a href="index.php?View_Product">
+        <a href="index.php?View_Product_Categories">
             <div class="panel-footer">
                 <span class="pull-left">View Details</span>
                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -129,7 +129,7 @@ include("include/db.php");
             </div>
         </div>
         <!-- panel heading end -->
-        <a href="index.php?View_Product">
+        <a href="index.php?View_Order">
             <div class="panel-footer">
                 <span class="pull-left">View Details</span>
                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -237,8 +237,8 @@ include("include/db.php");
 <!-- 3 Row End -->
  <!-- col-lg-4 start -->
   
- <div class="col-md-4">
-            <div class="panel">
+ <div class="col-md-4 card-box">
+            <div class="panel ">
               <div class="panel-body">
                 <div class="thumb-info mb-md">
                     <img src="admin_image/<?php echo $admin_image?>" alt="Image Not Found" class="rounded img-responsive" srcset="">

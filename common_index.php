@@ -68,6 +68,16 @@ session_start();
                      ?>
                         </a>
                     </li>
+                    <li>
+                        <?php
+                         if(!isset($_GET['index.php'])){
+                            echo "<a href='./admin_area/login.php' id='hide' name='hide' target='_blank'>Admin Login</a>";
+                         }else{
+
+                         }
+                        ?>
+                    </li>
+                    
                 </ul>
             </div>
         </div>

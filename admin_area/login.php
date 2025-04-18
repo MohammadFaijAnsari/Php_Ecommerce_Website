@@ -47,7 +47,7 @@
      $count=mysqli_num_rows($run_admin);
      if($count==1){
          $_SESSION['admin_email']=$admin_email;
-         echo "<script>window.open('index.php?Admin Dashboard','_self')</script>";
+         echo "<script>window.open('index.php?Dashboard','_self')</script>";
      }else{
         echo "<script>alert('Email / Password is Incorrect')</script>";
      }

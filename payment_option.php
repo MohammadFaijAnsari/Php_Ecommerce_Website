@@ -16,16 +16,31 @@
             
            ?>
     <div class="box">
-          <h1 class="text-center">Payment_Option</h1>
-           <p class='lead text-center'>
-             <a href="order.php?c_id=<?php echo $c_id;?>" id='hide' name='hide'>Pay Offline</a>
-           </p>
-           <center>
-             <p class="lead">
-                <a href="#" id="hide" name='hide'>
-                <img src="images/pay_pal.jpeg" widthe='80px' height='70px' img='img-responsive' alt="Image Not Found"></a>
-             </p>
-           </center>
+    <div class="card shadow-lg p-4">
+      <h1 class="text-center mb-4">Payment Option</h1>
+      <div class="row text-center">
+        <!-- Pay Offline -->
+        <div class="col-md-6 mb-4">
+          <div class="p-3 border rounded h-10 ">
+            <h5>Pay Offline</h5>
+            <a href="order.php?c_id=<?php echo $c_id; ?>" class="btn btn-primary mt-3">Proceed</a>
+          </div>
+        </div>
+
+        <!-- Pay Online -->
+        <div class="col-md-6 ">
+          <div class="p-3 border">
+            <h5>Pay Online</h5>
+            <a href="razorpay.php" class="btn btn-success" id="submit" name='submit'>Scan & Pay</a>
+            <!-- <img src="./admin_area/Payment/qr.jpg" alt="QR Code" class="img-fluid " style="max-width: 200px;"> -->
+            
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+
+  <!-- Bootstrap JS (Optional for interactivity) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

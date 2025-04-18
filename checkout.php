@@ -167,7 +167,7 @@
                  if(!isset($_SESSION['c_email'])){
                     include("customer/customer_login.php");
                  }else{
-                  //  echo "<script>alert('Payment Option')</script>";
+                  //  echo "<a href='payment_option.php'>Pay Offline</a>";
                     include("payment_option.php");
                  }
                 ?>
