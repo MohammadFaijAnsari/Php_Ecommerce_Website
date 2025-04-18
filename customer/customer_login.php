@@ -58,11 +58,13 @@
     if($check_cus==1 && $check_cart==0){
       $_SESSION['c_email']=$email;
       echo "<script>alert('Login Sucessfully');</script>";
-      echo "<script>window.open('customer/my_account.php','_self');</script>";
+      echo "<script>window.open('usermail.php','_self')</script>";
+      // echo "<script>window.open('customer/my_account.php','_self');</script>";
     }else{
       $_SESSION['c_email']=$email;
       echo "<script>alert('Login Sucessfully');</script>";
       echo "<script>window.open('checkout.php');</script>";
+      header('Location:test.php');
     }
   }
 ?>

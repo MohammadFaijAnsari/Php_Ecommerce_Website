@@ -9,7 +9,9 @@
     $delete_slider="DELETE  FROM mail WHERE id='$id'";
     $run_slider=mysqli_query($con,$delete_slider);
     if($run_slider){
-        echo "<script>alert('One Mail Deleted Sucessfully')</script>";    
+        // header("Location:../index.php");
+        echo "<script>alert('One Mail Deleted Sucessfully')</script>";   
+         
     }else{
         echo "<script>alert('One Slider Deleted Unsucessfully')</script>";
     }

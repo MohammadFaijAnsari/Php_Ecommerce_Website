@@ -170,7 +170,7 @@ if (isset($_POST['submit'])) {
 
   $run_product = mysqli_query($con, $insert_product);
   if ($run_product) {
-    // echo "<script>alert('Product Insert Sucessfuly');</script>";
+    echo "<script>alert('Product Insert Sucessfuly');</script>";
     header("Location:../index.php");
   }
 }

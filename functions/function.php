@@ -1,11 +1,14 @@
 
 <style>
   #image{
-    width: 328px;
+    width: 300px;
     height: 200px;
   }
   #hide {
     text-decoration: none;
+  }
+  #box{
+   border: 2px solid black;
   }
 </style>
 <?php
@@ -102,23 +105,23 @@ function search(){
       $product_title = $row_product['product_title'];
       $product_price = $row_product['product_price'];
       $product_img1 = $row_product['product_img1'];
+      $actual_price=$row_product['actual_price'];
     if($run_product>0){
         echo "
-        <div class='col-md-3 col-sm-6 center-responsive'>
-          <div class='product'>
-            <a href='details.php?product_id=$product_id'>
-              <img src='admin_area/product_images/$product_img1' class='img-responsive' id='image' name='image'/>
-            </a> 
+        <div class='col-md-4 col-sm-6 center-responsive' id='box' name='box'>
+            <div class='product'>
+                <a href='details.php?pro_id=$product_id'>
+                    <img src='admin_area/product_images_downloads/$product_img1' class='img-responsive' id='images' name='images'/>
+                </a>
             <div class='text'>
-             <h3><a href='details.php?product_id=$product_id' id='hide'>$product_title</a></h3>
-             <p class='price'>₹ $product_price</p>
-             <p class='buttons'>
-             &nbsp;&nbsp;
-              <a href='details.php?pro_id=$product_id' class='btn btn-default'>View Details</a>&nbsp;&nbsp;&nbsp;&nbsp;
-              <a href='details.php?pro_id=$product_id' class='btn btn-primary'><i class='fa fa-shopping-cart'></i>Add to Cart</a>
-              </p>
+                <h3><a href='details.php?pro_id=$product_id' id='hide'>$product_title</a></h3>
+                    <p class='price' id='price'>₹ $product_price &nbsp;&nbsp; ₹ <strike> $actual_price </strike></p>
+                    <p class='buttons'>
+                      <a href='details.php?pro_id=$product_id' class='btn btn-default'>View Details</a>
+                        <a href='details.php?pro_id=$product_id' class='btn btn-primary'><i class='fa fa-shopping-cart'></i>  Add to Cart</a>
+                    </p>
             </div>
-          </div>
+            </div>
         </div>
         ";
     }
