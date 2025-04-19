@@ -225,10 +225,12 @@
    if($check>0){
       $_SESSION['c_email']=$email;
       echo "<script>alert('You Have Registration Sucessfully')</script>";
+      echo "<script>window.open('usermail.php','_self')</script>";
       echo "<script>window.open('index.php','_self')</script>"; 
    }else{
       $_SESSION['c_email']=$email;
       echo "<script>alert('You Have Been Registration Sucessfully')</script>";
+      echo "<script>window.open('signupmail.php','_self')</script>";
       echo "<script>window.open('index.php','_self')</script>"; 
    }
  }
