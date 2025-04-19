@@ -1,14 +1,23 @@
-
 <style>
   #image{
     width: 300px;
     height: 200px;
   }
+
   #hide {
     text-decoration: none;
   }
-  #box{
-   border: 2px solid black;
+  .card-img-top {
+    height: 300px;
+    object-fit: cover;
+  }
+  .price {
+    font-size: 1.25rem;
+  }
+  .original-price {
+    text-decoration: line-through;
+    color: #888;
+    margin-left: 10px;
   }
 </style>
 <?php
@@ -20,38 +29,41 @@ if ($db) {
 }
 
 // Get Ip Address Start
- function getUserIp(){
-  switch(true){
-    case (!empty($_SERVER['HTTP_X_REAL_IP'])) : 
-      return $_SERVER['HTTP_X_REAL_IP'];  
-    case(!empty($_SERVER['HTTP_CLIENT_IP']))  :
+function getUserIp()
+{
+  switch (true) {
+    case (!empty($_SERVER['HTTP_X_REAL_IP'])):
+      return $_SERVER['HTTP_X_REAL_IP'];
+    case (!empty($_SERVER['HTTP_CLIENT_IP'])):
       return $_SERVER['HTTP_CLIENT_IP'];
-    case (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) :
+    case (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])):
       return $_SERVER['HTTP_X_FORWARDED_FOR'];
-    default : return $_SERVER['REMOTE_ADDR'];
+    default:
+      return $_SERVER['REMOTE_ADDR'];
   }
- }
+}
 // Get Ip Address End
 
 // Add Cart Start
-function addcart(){
+function addcart()
+{
   global $db;
-  if(isset($_GET['add_cart'])){
-    $ip_address=getUserIp();
-    $p_id=$_GET['add_cart'];
-    $product_qty=$_POST['product_qty'];
-    $product_size=$_POST['product_size'];
-    $check_product="SELECT * FROM cart WHERE ip_add='$ip_address' AND p_id='$p_id' ";
-    $run_product=mysqli_query($db,$check_product);
-    if(mysqli_num_rows($run_product)>0){
+  if (isset($_GET['add_cart'])) {
+    $ip_address = getUserIp();
+    $p_id = $_GET['add_cart'];
+    $product_qty = $_POST['product_qty'];
+    $product_size = $_POST['product_size'];
+    $check_product = "SELECT * FROM cart WHERE ip_add='$ip_address' AND p_id='$p_id' ";
+    $run_product = mysqli_query($db, $check_product);
+    if (mysqli_num_rows($run_product) > 0) {
       echo "
            <script>alert('This Product Is Already Added');</script>
           ";
       echo "<script>window.open('./card.php','_self')</script>";
       // header("Location:./details.php");
-    }else{
-      $query="INSERT INTO cart(p_id,ip_add,qty,size) VALUES('$p_id','$ip_address','$product_qty','$product_size')";
-      $run=mysqli_query($db,$query);
+    } else {
+      $query = "INSERT INTO cart(p_id,ip_add,qty,size) VALUES('$p_id','$ip_address','$product_qty','$product_size')";
+      $run = mysqli_query($db, $query);
       header("Location:/details.php");
     }
   }
@@ -59,75 +71,85 @@ function addcart(){
 // Add Cart End
 
 // Total Price Caliculate the Add To Cart Start
- function price_count(){
+function price_count()
+{
   global $db;
-  $ip_address=getUserIp();
-  $total=0;
-  $select_cart="SELECT * FROM cart WHERE ip_add='$ip_address' ";
-  $run_cart=mysqli_query($db,$select_cart);
-  while($res=mysqli_fetch_array($run_cart)){
-   $pro_id=$res['p_id'];
-   $pro_qty=$res['qty'];
-   $pro_size=$res['size'];
+  $ip_address = getUserIp();
+  $total = 0;
+  $select_cart = "SELECT * FROM cart WHERE ip_add='$ip_address' ";
+  $run_cart = mysqli_query($db, $select_cart);
+  while ($res = mysqli_fetch_array($run_cart)) {
+    $pro_id = $res['p_id'];
+    $pro_qty = $res['qty'];
+    $pro_size = $res['size'];
 
-   $get_price="SELECT * FROM product WHERE product_id='$pro_id' ";
-   $run_price=mysqli_query($db,$get_price);
-   while($row=mysqli_fetch_array($run_price)){
-    $sub_total=$row['product_price']* $pro_qty;
-    $total+=$sub_total;
-
-   }
+    $get_price = "SELECT * FROM product WHERE product_id='$pro_id' ";
+    $run_price = mysqli_query($db, $get_price);
+    while ($row = mysqli_fetch_array($run_price)) {
+      $sub_total = $row['product_price'] * $pro_qty;
+      $total += $sub_total;
+    }
   }
   echo $total;
- }
+}
 // Total Price Caliculate the Add To Cart End
 
 // Items Counts Start
- function item(){
+function item()
+{
   global $db;
-  $ip_address= getUserIp();
-  $get_items="SELECT * FROM cart WHERE ip_add= '$ip_address' ";
-  $run_items=mysqli_query($db,$get_items);
-  $count=mysqli_num_rows($run_items);
+  $ip_address = getUserIp();
+  $get_items = "SELECT * FROM cart WHERE ip_add= '$ip_address' ";
+  $run_items = mysqli_query($db, $get_items);
+  $count = mysqli_num_rows($run_items);
   echo $count;
- }
+}
 // Items Counts End
 
 // Serach Start
-function search(){
- if(isset($_GET['search'])){
-   global $db;
-    $searchdata=$_GET['search'];
-    $search="SELECT * FROM product WHERE product_title LIKE '$searchdata' OR product_price LIKE '$searchdata' ";
-    $run_product=mysqli_query($db,$search);
-    while ($row_product = mysqli_fetch_array($run_product)){
-      $product_id = $row_product['product_id'];
-      $product_title = $row_product['product_title'];
-      $product_price = $row_product['product_price'];
-      $product_img1 = $row_product['product_img1'];
-      $actual_price=$row_product['actual_price'];
-    if($run_product>0){
-        echo "
-        <div class='col-md-4 col-sm-6 center-responsive' id='box' name='box'>
-            <div class='product'>
-                <a href='details.php?pro_id=$product_id'>
-                    <img src='admin_area/product_images_downloads/$product_img1' class='img-responsive' id='images' name='images'/>
-                </a>
-            <div class='text'>
-                <h3><a href='details.php?pro_id=$product_id' id='hide'>$product_title</a></h3>
-                    <p class='price' id='price'>₹ $product_price &nbsp;&nbsp; ₹ <strike> $actual_price </strike></p>
-                    <p class='buttons'>
-                      <a href='details.php?pro_id=$product_id' class='btn btn-default'>View Details</a>
-                        <a href='details.php?pro_id=$product_id' class='btn btn-primary'><i class='fa fa-shopping-cart'></i>  Add to Cart</a>
-                    </p>
-            </div>
-            </div>
-        </div>
-        ";
+function search()
+{
+    if (isset($_GET['search']) && !empty(trim($_GET['search']))) {
+        global $db;
+        $searchdata = mysqli_real_escape_string($db, $_GET['search']);
+        $search_query = "SELECT * FROM product WHERE product_title LIKE '%$searchdata%' OR product_price LIKE '%$searchdata%'";
+        $run_product = mysqli_query($db, $search_query);
+
+        if (mysqli_num_rows($run_product) > 0) {
+            while ($row_product = mysqli_fetch_array($run_product)) {
+                $product_id = $row_product['product_id'];
+                $product_title = $row_product['product_title'];
+                $product_price = $row_product['product_price'];
+                $product_img1 = $row_product['product_img1'];
+                $actual_price = $row_product['actual_price'];
+
+                echo "
+                <div class='col-md-4 col-sm-6 center-responsive' >
+                    <div class='product'>
+                        <a href='details.php?pro_id=$product_id'>
+                            <img src='admin_area/product_images_downloads/$product_img1' class='img-responsive'  id='image' name='image'/>
+                        </a>
+                        <div class='text'>
+                            <h3><a href='details.php?pro_id=$product_id' id='hide'>$product_title</a></h3>
+                            <p class='price' id='price'>₹ $product_price &nbsp;&nbsp; ₹ <strike> $actual_price </strike></p>
+                            <p class='buttons'>
+                                <a href='details.php?pro_id=$product_id' class='btn btn-default'>View Details</a>
+                                <a href='details.php?pro_id=$product_id' class='btn btn-primary'><i class='fa fa-shopping-cart'></i> Add to Cart</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                ";
+            }
+        } else {
+            // echo "<h3 class='text-center'>No products found matching \"$searchdata\".</h3>";
+            echo "<div class='card box col-md-12 col-sm-4'>
+                    <h3 class='text-center'>No products found matching \"$searchdata\".</h3>
+                  </div>";
+        }
     }
-  }
- }
 }
+
 
 // Search End
 
@@ -142,7 +164,7 @@ function getPro()
     $product_title = $row_product['product_title'];
     $product_price = $row_product['product_price'];
     $product_img1 = $row_product['product_img1'];
-    $actual_price=$row_product['actual_price'];
+    $actual_price = $row_product['actual_price'];
     echo "
         <div class='col-md-3 col-sm-6 center-responsive'>
           <div class='product'>
@@ -165,7 +187,6 @@ function getPro()
         </div>
         ";
   }
-
 }
 // Product Categories Display Function 
 function getPcat()
@@ -262,21 +283,22 @@ function getPcatPro()
 }
 
 // Categories Filter Product Display
-function getCatPro(){
+function getCatPro()
+{
   global $db;
-  if(isset($_GET['cat_id'])){
-    $cat_id=$_GET['cat_id'];
-    $get_cat="SELECT * FROM categories WHERE cat_id='$cat_id' ";
-    $run_cat=mysqli_query($db,$get_cat);
-    $row=mysqli_fetch_array($run_cat);
-    
-    $cat_title=$row['cat_title'];
-    $cat_desc=$row['cat_desc'];
+  if (isset($_GET['cat_id'])) {
+    $cat_id = $_GET['cat_id'];
+    $get_cat = "SELECT * FROM categories WHERE cat_id='$cat_id' ";
+    $run_cat = mysqli_query($db, $get_cat);
+    $row = mysqli_fetch_array($run_cat);
 
-    $get_product="SELECT * FROM product WHERE cat_id='$cat_id' ";
-    $run_product=mysqli_query($db,$get_product);
+    $cat_title = $row['cat_title'];
+    $cat_desc = $row['cat_desc'];
 
-    $count=mysqli_num_rows($run_product);
+    $get_product = "SELECT * FROM product WHERE cat_id='$cat_id' ";
+    $run_product = mysqli_query($db, $get_product);
+
+    $count = mysqli_num_rows($run_product);
     if ($count == 0) {
       echo "
           <div class='box'>
@@ -315,8 +337,6 @@ function getCatPro(){
               </div>
         </div>
      ";
-    
-  
     }
   }
 }

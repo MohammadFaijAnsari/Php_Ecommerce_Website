@@ -117,6 +117,8 @@
              <?php
                 if(!isset($_GET['search'])){
                  getPro();
+                }else{
+                 search();
                 }
                 
              ?>
