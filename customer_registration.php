@@ -109,7 +109,6 @@
               
               <a href="card.php" class="btn btn-primary navbar-btn right" id="click">
                  <i class='fa fa-shopping-cart'></i>
-                 <!-- <i class="fa-solid fa-cart-flatbed"></i> -->
                  <span ><?php item();?> Items in Card</span>
               </a>
               <div class="navbar-collapse collapse right" >
@@ -166,8 +165,7 @@
                     <div class="box-header">
                         <center>
                             <h2>Customer Registration</h2>
-                            <!-- <p class="text-muted">If you have any problem and feel free to contact us,our customer services center is working for you 24/7</p> -->
-                        </center>
+                            </center>
                     </div>
                     <!-- Form Start -->
                     <form action="customer_registration.php" method="post" enctype="multipart/form-data">

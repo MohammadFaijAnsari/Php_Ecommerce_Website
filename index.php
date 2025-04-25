@@ -113,7 +113,7 @@
     <!-- Products Start -->
     <div class="container">
         <div class="row">
-            <!-- 1 Product Start -->
+            <!-- Product Display Function -->
              <?php
                 if(!isset($_GET['search'])){
                  getPro();
@@ -122,32 +122,9 @@
                 }
                 
              ?>
-            <!-- 1 Product End -->
-
-            <!-- 2 Product Start -->
-            <!-- <div class="col-sm-4 col-md-3">
-                <div class="product">
-                    <a href="details.php">
-                        <img src="admin_area/product_images/laptop1.jpeg" alt="Image Not Found" class="img-responsive" id="images1">
-                    </a>
-                    <div class="text">
-                        <h3><a href="details.php" id="hide">MacBook Laptop</a></h3>
-                        <p class="price">₹ 1,50,000</p>
-                        <p class="button">
-                            <a href="details.php" class="btn btn-default">View Details</a>
-                            <a href="details.php" class="btn btn-primary">
-                                <i class="fa fa-shopping-cart"></i> Add to Cart
-                            </a>
-                        </p>
-                    </div>
-                </div>
-            </div> -->
-            <!-- 2 Product End -->
-             
-
-            
         </div>
     </div>
+            
     <!-- Products End -->
 
     <!-- Pagination Start  -->

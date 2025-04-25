@@ -27,9 +27,6 @@
         <div class="d-grid">
           <button type="submit" class="btn btn-primary" id="admin_login" name="admin_login">Login</button>
         </div>
-        <div class="text-center mt-3">
-          <a href="admin_forgetpass.php" class="text-decoration-none">Lost Your Password ? Forgot Password?</a>
-        </div>
       </form>
     </div>
   </div>
