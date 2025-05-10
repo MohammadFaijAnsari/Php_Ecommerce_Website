@@ -73,7 +73,7 @@ include("functions/function.php");
                     <li>
                         <?php
                         if (!isset($_GET['index.php'])) {
-                            echo "<a href='./admin_area/login.php' id='hide' name='hide' target='_blank'>Admin Login</a>";
+                            echo "<a href='./admin_area/login.php' id='hide' name='hide' target='_self'>Admin Login</a>";
                         } else {
                         }
                         ?>
@@ -147,6 +147,8 @@ include("functions/function.php");
                             </span>
                         </div>
                     </form>
+                    
+
                     <!-- <form method="get" action="index.php">
                         <input type="text" name="search" placeholder="Search...">
                         <button type="submit" name="submit">Search</button>
