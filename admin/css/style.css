@@ -1,0 +1,177 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.navbar {
+    margin: 0;
+    border-radius: 0;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    color: white !important;
+}
+
+/* Sidebar Styling */
+.sidebar-nav {
+    list-style: none;
+    padding: 0;
+    margin-top: -1px;
+    background-color: #555555;
+    color: white;
+    position: fixed;
+    top: 51px;
+    left: 0;
+    bottom: 0;
+    overflow-y: auto;
+    width: 100%;
+}
+
+.sidebar-nav li {
+    margin-top: 100px;
+    border-bottom: 1px solid #444;
+}
+
+.sidebar-nav a {
+    display: block;
+    color: white;
+    /* Test */
+    background-color: #555555;
+    padding: 12px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    list-style: none;
+}
+
+.sidebar-nav a:hover {
+    background-color: white;
+    color: black;
+}
+
+.sidebar-nav .collapse ul {
+    padding-left: 20px;
+}
+
+.sidebar-nav .collapse ul a {
+    font-size: 24px;
+    padding: 0;
+}
+.sidebar-nav>li>ul>li>a{
+    display: block;
+    padding-left: 10px 15px 10px 38px;
+    text-decoration: none;
+    color: black;
+    background-color: white;
+}
+.sidebar-nav>li>ul>li>a:hover{
+    display: block;
+    padding-left: 10px 15px 10px 38px;
+    text-decoration: none;
+    color: black;
+    background-color: white;
+}
+.sidebar-nav ul,
+.sidebar-nav li {
+    list-style: none; /* Removes bullets or numbering */
+    margin: 0;
+    padding: 0;
+    background: black; /* Sets background color to white */
+}
+
+/* Adjust for Larger Screens */
+@media (min-width: 768px) {
+    .sidebar-nav {
+        width: 250px;
+    }
+
+    .collapse.navbar-collapse {
+        margin-left: 250px;
+    }
+}
+
+@media (min-width: 992px) {
+    .navbar {
+        font-size: 18px;
+    }
+
+    .sidebar-nav {
+        width: 300px;
+    }
+
+    .collapse.navbar-collapse {
+        margin-left: 300px;
+    }
+}
+
+/* Content Wrapper */
+#page-wrapper {
+    padding: 20px;
+    margin-left: 0;
+    background-color: #fff;
+    min-height: 100vh;
+}
+
+@media (min-width: 768px) {
+    #page-wrapper {
+        margin-left: 250px;
+    }
+}
+
+@media (min-width: 992px) {
+    #page-wrapper {
+        margin-left: 300px;
+    }
+}
+
+/* Navbar Top Right */
+.navbar-right .dropdown-menu {
+    width: 300px;
+    padding: 15px;
+    border-radius: 0;
+}
+
+.badge {
+    background-color: #d9534f;
+    font-size: 12px;
+}
+
+
+
+/* Style the dashboard Page */
+.huge{
+    font-size: 40px;
+    line-height: normal;
+}
+.panel-green , .panel-heading{
+    color: #fff;
+    border-radius:1px solid green;
+
+    background-color: green;
+}
+.panel-green >a{
+    color: green;
+    
+}
+.panel-yellow > .panel-heading{
+    color: #fff;
+    border-radius:1px solid yellowgreen;
+
+    background-color: yellowgreen;
+}
+.panel-yellow >a{
+    color: yellowgreen;
+}
+.panel-red> .panel-heading{
+    color: #fff;
+    border-radius:1px solid red;
+
+    background-color:red;
+}
+.panel-red >a{
+    color: red;
+}
+
